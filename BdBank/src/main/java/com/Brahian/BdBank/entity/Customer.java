@@ -119,10 +119,6 @@ public class Customer {
         return creationUser;
     }
 
-    // public void setCreationUser(String creationUser) {
-    //     this.creationUser = creationUser;
-    // }
-
     public String getModificationDate() {
         return modificationDate;
     }
@@ -134,10 +130,5 @@ public class Customer {
     public String getModificationUser() {
         return modificationUser;
     }
-
-    // public void setModificationUser(String modificationUser) {
-    //     this.modificationUser = modificationUser;
-    // }
-
     
 }

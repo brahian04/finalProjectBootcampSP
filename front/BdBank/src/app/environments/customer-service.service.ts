@@ -16,4 +16,9 @@ export class CustomerServiceService {
   getCustomersList():Observable<Customer[]>{
     return this.httpClient.get<Customer[]>(`${this.url}`);
   }
+
+  // método para registrar cliente
+  registerCustomer(customer:Customer): Observable<Object>{
+    return this.httpClient.post(`${this.url}`,customer);
+  }
 }

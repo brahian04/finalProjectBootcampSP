@@ -1,0 +1,49 @@
+<div class="col-md-3 offset-md-4">
+    <h3 class="text-center">Registrar clientes</h3>
+    <form (ngSubmit)= "onSubmit()">
+        <div class="form-group">
+            <label>Nombre: </label>
+            <input type="text"
+            id="name"
+            [(ngModel)]= "customer.name"
+            name="name">
+        </div>
+        <div class="form-group">
+            <label>Apellido: </label>
+            <input type="text"
+            id="lastName"
+            [(ngModel)]= "customer.lastName"
+            name="lastName">
+        </div>
+        <div class="form-group">
+            <label>Fecha de nacimiento: </label>
+            <input type="text"
+            id="dateOfBirth"
+            [(ngModel)]= "customer.dateOfBirth"
+            name="dateOfBirth">
+        </div>
+        <div class="form-group">
+            <label>Tipo de documento: </label>
+            <input type="text"
+            id="documentType"
+            [(ngModel)]= "customer.documentType"
+            name="documentType">
+        </div>
+        <div class="form-group">
+            <label>Número de documento: </label>
+            <input type="number"
+            id="documentNumber"
+            [(ngModel)]= "customer.documentNumber"
+            name="documentNumber">
+        </div>
+        <div class="form-group">
+            <label>Correo electrónico: </label>
+            <input type="email"
+            id="email"
+            [(ngModel)]= "customer.email"
+            name="email">
+        </div>
+
+        <button class="btn btn-success">Guardar</button>
+    </form>
+</div>
