@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CustomerServiceService } from '../environments/customer-service.service';
 import { Customer } from '../model/customer';
 
 @Component({
@@ -6,8 +7,19 @@ import { Customer } from '../model/customer';
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
-export class CustomerListComponent {
+export class CustomerListComponent implements OnInit{
+
   customers:Customer[];
 
-  constructor(public service:ServiceMainService){}
+  constructor(private service:CustomerServiceService){}
+
+  private customerList(){
+    this.service.getCustomersList().subscribe(res=> {
+      this.customers= res;
+    });
+  }
+
+  ngOnInit(): void {
+    this.customerList();
+  }
 }

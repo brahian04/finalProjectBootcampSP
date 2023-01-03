@@ -3,19 +3,31 @@
     <table class="table table-striped">
         <thead class="table-dark">
             <tr>
-                <th>Name</th>
-                <th>Isbn</th>
-                <th>Author</th>
-                <th>Languaje</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha de nacimiento</th>
+                <th>Tipo de documento</th>
+                <th>Número de documento</th>
+                <th>Correo Electrónico</th>
+                <th>Fecha de creación</th>
+                <th>Usuario de creación</th>
+                <th>Fecha de modificación</th>
+                <th>Usuario de modificación</th>
             </tr>
         </thead>
-        <!-- <tbody>
-            <tr *ngFor="let book of books">
-                <td>{{book.bookName}}</td>
-                <td>{{book.isbn}}</td>
-                <td>{{book.author}}</td>
-                <td>{{book.languaje}}</td>
+        <tbody>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.name}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.dateOfBirth}}</td>
+                <td>{{customer.documentType}}</td>
+                <td>{{customer.documentNumber}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.creationDate}}</td>
+                <td>{{customer.creationUser}}</td>
+                <td>{{customer.modificationDate}}</td>
+                <td>{{customer.modificationUser}}</td>
             </tr>
-        </tbody> -->
+        </tbody>
     </table>
 </div>
