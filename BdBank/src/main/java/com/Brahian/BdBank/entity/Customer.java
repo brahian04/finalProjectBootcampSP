@@ -19,7 +19,7 @@ public class Customer {
     @Column(name= "documentType")
     private String documentType;
 
-    @Column(name= "documentNumber")
+    @Column(name= "documentNumber", unique = true)
     private int documentNumber;
 
     @Column(name= "name", length = 60, nullable = false)

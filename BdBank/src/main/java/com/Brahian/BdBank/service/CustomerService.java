@@ -7,6 +7,7 @@ import com.Brahian.BdBank.entity.Customer;
 
 public interface CustomerService {
     public Customer createCustomer(Customer customer);
+    public boolean updateCustomerById(int id, Customer customerDetail);
     public List<Customer> getAllCustomers();
     public Optional<Customer> getCustomerById(int id);
     public boolean deleteCustomerById(int id);
