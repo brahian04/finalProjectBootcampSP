@@ -13,6 +13,7 @@
                 <th>Usuario de creación</th>
                 <th>Fecha de modificación</th>
                 <th>Usuario de modificación</th>
+                <th>Options</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,11 @@
                 <td>{{customer.creationUser}}</td>
                 <td>{{customer.modificationDate}}</td>
                 <td>{{customer.modificationUser}}</td>
+                <td>
+                    <button (click)= "updateCustomer(customer.id)" class="btn btn-info">Edit</button>
+                    <button (click)= "deleteCustomer(customer.id)" class="btn btn-info" style="margin-left : 10px">Delete</button>
+                    <button (click)= "customerDetail(customer.id)" class="btn btn-primary" style="margin-left : 10px">Details</button>
+                </td>
             </tr>
         </tbody>
     </table>

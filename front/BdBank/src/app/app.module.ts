@@ -8,13 +8,17 @@ import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerListComponent,
     HomeComponent,
-    RegisterCustomerComponent
+    RegisterCustomerComponent,
+    UpdateCustomerComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
