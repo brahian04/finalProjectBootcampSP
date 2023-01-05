@@ -12,7 +12,7 @@ export class CustomerListComponent implements OnInit{
 
   customers:Customer[];
 
-  constructor(private service:CustomerServiceService, private router:Router){}
+  constructor(private service:CustomerServiceService, private router:Router) { }
 
   private customerList(){
     this.service.getCustomersList().subscribe(res=> {

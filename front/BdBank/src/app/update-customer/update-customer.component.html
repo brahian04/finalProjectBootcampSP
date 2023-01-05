@@ -14,7 +14,7 @@
             placeholder="type name "
             #name = "ngModel"
             >
-            <div class="alert alert-danger" *ngIf= "name.invalid && (name.dirty || name.touched)">
+            <!-- <div class="alert alert-danger" *ngIf= "name.invalid && (name.dirty || name.touched)">
                 <div *ngIf = "name.errors.required">
                   please tupe name
                 </div>
@@ -25,7 +25,7 @@
                     The name must have a maximum of 10 characters
                 </div>
               </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="form_group">
@@ -41,7 +41,7 @@
             placeholder="type last name "
             #lastName = "ngModel"
             >
-            <div class="alert alert-danger" *ngIf= "lastName.invalid && (lastName.dirty || lastName.touched)">
+            <!-- <div class="alert alert-danger" *ngIf= "lastName.invalid && (lastName.dirty || lastName.touched)">
                 <div *ngIf = "lastName.errors.required">
                   type last name please
                 </div>
@@ -52,7 +52,7 @@
                     The last name must have a maximum of 10 characters
                 </div>
               </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="form_group">
@@ -68,7 +68,7 @@
             placeholder="type date Of Birth "
             #dateOfBirth = "ngModel"
             >
-            <div class="alert alert-danger" *ngIf= "dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)">
+            <!-- <div class="alert alert-danger" *ngIf= "dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)">
                 <div *ngIf = "dateOfBirth.errors.required">
                   please type date Of Birth
                 </div>
@@ -79,7 +79,7 @@
                     The name must have a maximum of 10 characters
                 </div>
               </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="form-group">
@@ -117,14 +117,14 @@
             placeholder="type email "
             #email = "ngModel"
             >
-            <div class="alert alert-danger" *ngIf= "email.invalid && (email.dirty || email.touched)">
+            <!-- <div class="alert alert-danger" *ngIf= "email.invalid && (email.dirty || email.touched)">
                 <div *ngIf = "email.errors.required">
                   type email please
                 </div>
                 <div *ngIf = "email.errors.pattern">
                     Please type the email with the following format : user100@mail.com
                 </div>
-              </div>
+              </div> -->
         </div>
 
         <button class="btn btn-success" [disabled]= "!customerForm.form.valid">Save</button>

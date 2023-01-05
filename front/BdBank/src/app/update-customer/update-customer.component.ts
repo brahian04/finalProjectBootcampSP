@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import  swal  from 'sweetalert2';
+// import {swal}  from 'sweetalert2';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerServiceService } from '../environments/customer-service.service';
-import { Customer } from '../model/customer';
+import { Customer } from '../model/customer'; 
 
 @Component({
   selector: 'app-update-customer',
@@ -23,7 +23,7 @@ export class UpdateCustomerComponent implements OnInit {
 
   goCustomerList(){
     this.router.navigate(['/customers']);
-    swal('Updated customer',`The customer ${this.customer.name} has been successfully updated`,`success`);
+    // swal('Updated customer',`The customer ${this.customer.name} has been successfully updated`,`success`);
   }
 
   onSubmit(){
