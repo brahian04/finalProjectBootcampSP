@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "swee": "^0.0.4",
+    "sweetalert2": "^11.4.8"
+  }
+}

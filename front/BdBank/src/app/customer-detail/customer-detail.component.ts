@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerServiceService } from '../environments/customer-service.service';
 import { Customer } from '../model/customer';
 
@@ -12,7 +12,8 @@ export class CustomerDetailComponent implements OnInit {
 
   id:number
   customer:Customer;
-  constructor(private route:ActivatedRoute,private customerService:CustomerServiceService){}
+  constructor(private route:ActivatedRoute,private customerService:CustomerServiceService,private router:Router){}
+
 
   ngOnInit(): void {
       this.id= this.route.snapshot.params['id'];

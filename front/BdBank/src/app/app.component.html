@@ -1,13 +1,27 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" [routerLink]="['home']">HOME</a>
-            <a class="nav-item nav-link" [routerLink]="['customers']">Client list</a>
-            <a class="nav-item nav-link" [routerLink]="['register-customers']">Register client</a>
-        </div>
-    </div>
+<nav class="navbar navbar-expand-lg bg-success navbar-light">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/doge-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95785.svg" width="40" height="40" class="d-inline-block align-top" alt="">
+        BDBank</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['customers']">Client list</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['register-customers']">Register client</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  
 </nav>
-<h1 class="text-center">{{title}}</h1>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+<!-- <h1 class="text-rigth bg-success text-black" style="width: fit-content;">{{title}}</h1> -->
+<router-outlet></router-outlet>
+  

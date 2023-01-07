@@ -36,7 +36,7 @@
             name = "lastName"
             required
             minlength="4"
-            maxlength="10"
+            maxlength="20"
             placeholder="type last name "
             #lastName = "ngModel"
             >
@@ -125,6 +125,6 @@
         </div>
 
         <button class="btn btn-success" [disabled]= "!customerForm.form.valid">Save</button>
-        <button class="btn btn-danger" (click)= "goCustomerList" style="margin-left : 10px">Cancel</button>
+        <a class="btn btn-danger" href="/customers" role="button" style="margin-left : 10px">Cancel</a>
     </form>
 </div>
