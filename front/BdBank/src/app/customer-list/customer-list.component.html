@@ -1,9 +1,9 @@
-<div class="container">
-    <h2>Customer List</h2>
+<div class="container" style="margin-top: 50px">
+  <h2 class="text-center" style="background-color:rgba(158, 185, 178, 0.685)">Customer List</h2>
     <table class="table table-striped">
         <thead class="table-success" style="background-color: green">
             <tr>
-                <th>Name</th>
+                <th >Name</th>
                 <th>Last name</th>
                 <th>Date of birth</th>
                 <th>Document type</th>
@@ -29,20 +29,7 @@
                 <td>{{customer.modificationDate}}</td>
                 <td>{{customer.modificationUser}}</td>
                 <td>
-                      <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Selecciona una opción
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Opción 1</a>
-                          <a class="dropdown-item" href="#">Opción 2</a>
-                          <a class="dropdown-item" href="#">Opción 3</a>
-                          <!-- <button (click)= "updateCustomer(customer.id)" class="btn btn-info btn-sm btn-block">Edit</button>
-                          <button (click)= "deleteCustomer(customer.id)" class="btn btn-danger btn-sm btn-block">Delete</button>
-                          <button (click)= "customerDetail(customer.id)" class="btn btn-primary btn-sm btn-block">Details</button> -->
-                        </div>
-                      </div>
-                      
+                  <button class="ngbDropdownItem" (click)= "customerDetail(customer.id)" class="btn btn-primary btn-sm btn-block">Details</button>
                 </td>
             </tr>
         </tbody>

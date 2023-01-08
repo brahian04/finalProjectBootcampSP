@@ -22,7 +22,11 @@
     "lib": [
       "ES2022",
       "dom"
-    ],"strictPropertyInitialization": false
+    ],
+    "types": [
+      "@angular/localize"
+    ],
+    "strictPropertyInitialization": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -21,14 +21,15 @@ export class UpdateCustomerComponent implements OnInit {
       },error =>console.log(error));
   }
 
-  goCustomerList(){
-    this.router.navigate(['/customers']);
+  goCustomerList(id:number){
+    // this.router.navigate(['/customers']);
+    this.router.navigate(['customer-detail',id]);
     swal('Updated customer',`The customer ${this.customer.name} has been successfully updated`,`success`);
   }
 
   onSubmit(){
     this.customerService.updateCustomer(this.id,this.customer).subscribe(date =>{
-      this.goCustomerList();
+      this.goCustomerList(this.id);
     },error =>console.log(error));
   }
 }

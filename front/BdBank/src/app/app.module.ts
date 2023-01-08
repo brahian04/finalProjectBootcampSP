@@ -10,6 +10,7 @@ import { RegisterCustomerComponent } from './register-customer/register-customer
 import { FormsModule } from '@angular/forms';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { NgbdDropdownContainer } from './dropdown-container/dropdown-container.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
     HomeComponent,
     RegisterCustomerComponent,
     UpdateCustomerComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbdDropdownContainer
   ],
   providers: [],
   bootstrap: [AppComponent]
