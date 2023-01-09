@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import swal  from 'sweetalert2';
 import { CustomerServiceService } from '../environments/customer-service.service';
 import { Customer } from '../model/customer';
 
@@ -28,6 +29,7 @@ export class RegisterCustomerComponent implements OnInit {
 
   onSubmit(){
     this.registCustomer();
+    swal('Created customer',`The customer ${this.customer.name} has been successfully created`,`success`);
   }
 
 }

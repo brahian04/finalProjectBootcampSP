@@ -48,6 +48,9 @@ export class CustomerDetailComponent implements OnInit {
     })
   }
 
+  sendCustomerList(){
+    this.router.navigate(['/customers']);
+  }
 
   ngOnInit(): void {
       this.id= this.route.snapshot.params['id'];

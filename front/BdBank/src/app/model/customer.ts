@@ -2,12 +2,12 @@ export class Customer {
     id:number
     name:string;
     lastName:string;
-    dateOfBirth:string;
+    dateOfBirth:Date;
     documentType:string;
-    documentNumber:number;
+    documentNumber:string;
     email:string;
-    creationDate:string;
+    creationDate:Date;
     creationUser:string;
-    modificationDate:string;
+    modificationDate:Date;
     modificationUser:string;
 }
