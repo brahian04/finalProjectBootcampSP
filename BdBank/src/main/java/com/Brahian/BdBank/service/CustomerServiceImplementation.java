@@ -1,5 +1,6 @@
 package com.Brahian.BdBank.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +19,8 @@ public class CustomerServiceImplementation implements CustomerService{
 
     @Override
     public Customer createCustomer(Customer customer) {
+        customer.setcreationUser("admin");
+        customer.setCreationDate( new Date());
         return customerRepository.save(customer);
     }
 
@@ -48,7 +51,9 @@ public class CustomerServiceImplementation implements CustomerService{
             client.setDateOfBirth(customerDetail.getDateOfBirth());
             client.setDocumentType(customerDetail.getDocumentType());
             client.setDocumentNumber(customerDetail.getDocumentNumber());
-            client.setEmail(customerDetail.getEmail());     
+            client.setEmail(customerDetail.getEmail());
+            client.setModificationUser("admin");
+            client.setModificationDate( new Date());
             customerRepository.save(client);
             return true;
         }).orElse(false);

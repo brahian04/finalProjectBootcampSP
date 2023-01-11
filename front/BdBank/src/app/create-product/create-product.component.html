@@ -1,0 +1,18 @@
+<h3>Create-product</h3>
+<div class="containner">
+    <form (ngSubmit)= "onSubmit()" #customerForm="ngForm">
+        <div class="form_group">
+            <label>Product Type: </label>
+            <select id="accountType"
+            [(ngModel)]= "product.accountType"
+            name="accountType"
+            required
+            #documentType = "ngModel"
+            style="margin-left: 10px; margin-top: 20px">
+                <option value="savings account" selected>savings account</option>
+                <option value="current account">current account</option>
+            </select>
+        </div>
+        <button class="btn btn-success" [disabled]= "!customerForm.form.valid">Save</button>
+    </form>
+</div>

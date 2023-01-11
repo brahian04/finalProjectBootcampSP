@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreateProductComponent } from './create-product/create-product.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'customers',component:CustomerListComponent},
   { path: 'register-customers',component:RegisterCustomerComponent},
   { path: 'update-customer/:id',component:UpdateCustomerComponent},
-  { path: 'customer-detail/:id',component:CustomerDetailComponent}
+  { path: 'customer-detail/:id',component:CustomerDetailComponent},
+  { path: 'customer-detail/:id/create-product',component:CreateProductComponent}
 
 ];
 

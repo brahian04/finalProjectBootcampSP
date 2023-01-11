@@ -1,5 +1,6 @@
 create database BD_bank;
 SELECT * FROM bd_bank.customers;
+SELECT * FROM bd_bank.products;
 use bd_bank;
 ALTER TABLE customers ALTER COLUMN modification_user SET DEFAULT 'admin';
 ALTER TABLE customers ALTER COLUMN creation_user SET DEFAULT 'admin';

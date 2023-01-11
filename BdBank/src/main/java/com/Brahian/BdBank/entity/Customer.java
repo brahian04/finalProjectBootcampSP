@@ -1,6 +1,9 @@
 package com.Brahian.BdBank.entity;
 
 
+import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +23,7 @@ public class Customer {
     private String documentType;
 
     @Column(name= "documentNumber", unique = true)
-    private int documentNumber;
+    private String documentNumber;
 
     @Column(name= "name", length = 60, nullable = false)
     private String name;
@@ -32,16 +35,19 @@ public class Customer {
     private String email;
 
     @Column(name= "dateOfBirth")
-    private String dateOfBirth;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date dateOfBirth;
 
     @Column(name= "creationDate")
-    private String creationDate;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date creationDate;
 
     @Column(name= "creationUser")
     private String creationUser;
 
     @Column(name= "modificationDate")
-    private String modificationDate;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date modificationDate;
 
     @Column(name= "modificationUser")
     private String modificationUser;
@@ -67,11 +73,11 @@ public class Customer {
         this.documentType = documentType;
     }
 
-    public int getDocumentNumber() {
+    public String getDocumentNumber() {
         return documentNumber;
     }
 
-    public void setDocumentNumber(int documentNumber) {
+    public void setDocumentNumber(String documentNumber) {
         this.documentNumber = documentNumber;
     }
 
@@ -99,19 +105,19 @@ public class Customer {
         this.email = email;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(String creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -119,16 +125,24 @@ public class Customer {
         return creationUser;
     }
 
-    public String getModificationDate() {
+    public void setcreationUser(String creationUser) {
+        this.creationUser = creationUser;
+    }
+
+    public Date getModificationDate() {
         return modificationDate;
     }
 
-    public void setModificationDate(String modificationDate) {
+    public void setModificationDate(Date modificationDate) {
         this.modificationDate = modificationDate;
     }
 
     public String getModificationUser() {
         return modificationUser;
+    }
+
+    public void setModificationUser(String modificationUser) {
+        this.modificationUser = modificationUser;
     }
     
 }
