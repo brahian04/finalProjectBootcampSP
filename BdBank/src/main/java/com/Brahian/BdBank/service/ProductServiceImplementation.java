@@ -1,12 +1,16 @@
 package com.Brahian.BdBank.service;
 
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Brahian.BdBank.entity.Customer;
 import com.Brahian.BdBank.entity.Product;
+import com.Brahian.BdBank.repository.CustomerRepository;
 import com.Brahian.BdBank.repository.ProductRepository;
 
 @Service
@@ -15,10 +19,56 @@ public class ProductServiceImplementation implements ProductService {
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    CustomerRepository customerRepository;
+
     @Override
-    public Product createProduct(Product product) {
-        product.setCreationUser("admin");
-        return productRepository.save(product);
+    public boolean createProduct(Integer idCustomer, Product accounDetail) {
+        Product product= new Product();
+        Customer idcustomer=customerRepository.id(idCustomer);
+        String res= new String();
+        int[] accountNum= new int[10];
+
+        if(customerRepository.findById(idCustomer).isPresent()){
+            if(accounDetail.getAccountType()=="savings account"){
+                accountNum[0]= 4;
+                accountNum[1]= 6;
+                for(int i=2; i<10; i++){
+                    int num= (int)(Math.random()*9+0);
+                    accountNum[i]= num;
+                }
+                res = Arrays.stream(accountNum)
+                .mapToObj(String::valueOf)
+                .reduce((x, y) -> x + "" + y)
+                .get();
+            }else{
+                accountNum[0]= 2;
+                accountNum[1]= 3;
+                for(int i=2; i<10; i++){
+                    int num= (int)(Math.random()*9+0);
+                    accountNum[i]= num;
+                }
+                res = Arrays.stream(accountNum)
+                .mapToObj(String::valueOf)
+                .reduce((x, y) -> x + "" + y)
+                .get();
+            }
+            product.setAccountType(accounDetail.getAccountType());
+            product.setAccountNumber(res);
+            product.setStatus("active");
+            product.setBalance(0);
+            product.setAvailableBalance(0);
+            product.setGMF("exempt");
+            product.setCreationDate(new Date());
+            product.setCreationUser("admin");
+            product.setidCustomer(idcustomer);
+            productRepository.save(product);
+            return true;
+        }else{
+            return false;
+        }
+        
+
     }
 
     @Override

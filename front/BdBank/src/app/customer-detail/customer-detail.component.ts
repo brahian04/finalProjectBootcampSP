@@ -30,7 +30,7 @@ export class CustomerDetailComponent implements OnInit {
   }
 
   registProduct(){
-    this.productService.registerProduct(this.product).subscribe(res => {
+    this.productService.registerProduct(this.id,this.product).subscribe(res => {
       console.log(res);
       // this.goCustomerDetail(this.id);
     },error => console.log(error));

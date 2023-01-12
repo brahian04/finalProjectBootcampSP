@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.Brahian.BdBank.entity.Product;
 
 public interface ProductService {
-    public Product createProduct(Product product);
+    public boolean createProduct(Integer idCustomer, Product accounDetail);
     public boolean updateProductById(int idProduct, Product productDetail);
     public List<Product> getAllProduct();
     public Optional<Product> getProductById(int idProduct);

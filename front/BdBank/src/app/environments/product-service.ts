@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { Customer } from "../model/customer";
 import { Product } from "../model/product";
 
 @Injectable({
@@ -22,8 +23,8 @@ export class ProductService {
   }
 
   // método para registrar cuenta
-  registerProduct(product:Product): Observable<Object>{
-    return this.httpClient.post(`${this.url}`,product);
+  registerProduct(id:number,product:Product): Observable<Object>{
+    return this.httpClient.post(`${this.url}/${id}`,product);
   }
 
   // método para actualizar cuenta

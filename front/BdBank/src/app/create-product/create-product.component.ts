@@ -18,20 +18,20 @@ export class CreateProductComponent implements OnInit{
     this.id= this.route.snapshot.params['id'];
   }
 
-  registProduct(){
-    this.productService.registerProduct(this.product).subscribe(res => {
-      console.log(res);
-      // this.goCustomerDetail(this.id);
-    },error => console.log(error));
-  }
+  // registProduct(){
+  //   this.productService.registerProduct(this.product).subscribe(res => {
+  //     console.log(res);
+  //     // this.goCustomerDetail(this.id);
+  //   },error => console.log(error));
+  // }
 
   // goCustomerDetail(id:number){
   //   this.router.navigate(['customers-detail',id]);
   // }
 
-  onSubmit(){
-    this.registProduct();
-    swal('Created customer',`The customer ${this.product.accountType} has been successfully created`,`success`);
-  }
+  // onSubmit(){
+  //   this.registProduct();
+  //   swal('Created customer',`The customer ${this.product.accountType} has been successfully created`,`success`);
+  // }
 
 }

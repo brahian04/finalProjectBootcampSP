@@ -23,10 +23,20 @@ public class ProductController {
 
     @Autowired
     ProductService productService;
+
     
-    @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody Product product){
-        return new ResponseEntity<>(productService.createProduct(product), HttpStatus.CREATED);
+    @PostMapping("/{id}")
+    public ResponseEntity<Product>
+    createProduct(
+        @RequestBody Product productDetail,
+        @PathVariable("id") Integer idCustomer){
+
+
+        if(productService.createProduct(idCustomer, productDetail)){
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }else {
+            return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        }
     }
 
     @GetMapping("/{id}")

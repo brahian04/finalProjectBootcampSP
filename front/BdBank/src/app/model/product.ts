@@ -1,13 +1,14 @@
 export class Product {
-    id:number;
+    idproduct:number;
     accountNumber:string
     balance:number;
     availableBalance:number;
     accountType:string;
     status:string;
-    GMF:boolean;
+    GMF:String;
     creationDate:Date;
     creationUser:string;
     modificationDate:Date;
     modificationUser:string;
+    id:number;
 }

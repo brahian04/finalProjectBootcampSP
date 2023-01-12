@@ -1,9 +1,10 @@
 package com.Brahian.BdBank.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,40 +23,71 @@ public class Product {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int idProduct;
     
-    @Column(name= "accountType", unique = true, nullable = false)
+    @Column(name= "accountType", nullable = false)
     private String accountType;
 
     @Column(name= "accountNumber", unique = true, nullable = false)
-    private int accountNumber;
+    private String accountNumber;
 
-    @Column(name= "status", length = 50, nullable = false)
+    @Column(name= "status", length = 50)
     private String status;
 
-    @Column(name= "balance", nullable = false)
+    @Column(name= "balance")
     private int balance;
 
-    @Column(name= "availableBalance", nullable = false)
+    @Column(name= "availableBalance")
     private int availableBalance;
 
-    @Column(name= "GMF", nullable = false)
-    private boolean GMF;
+    @Column(name= "GMF")
+    private String GMF;
 
     @Column(name= "creationDate")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date creationDate;
 
     @Column(name= "creationUser")
     private String creationUser;
 
     @Column(name= "modificationDate")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date modificationDate;
 
     @Column(name= "modificationUser")
     private String modificationUser;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name= "id")
-    private Customer customer;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, optional = false)
+    @JoinColumn(name= "id", nullable = false)
+    private Customer idCustomer;
+
+    
+
+    public Product() {
+    }
+
+    public Product(int idProduct, String accountType, String accountNumber, String status, int balance,
+            int availableBalance, String gMF, Date creationDate, String creationUser, Date modificationDate,
+            String modificationUser, Customer idCustomer) {
+        this.idProduct = idProduct;
+        this.accountType = accountType;
+        this.accountNumber = accountNumber;
+        this.status = status;
+        this.balance = balance;
+        this.availableBalance = availableBalance;
+        GMF = gMF;
+        this.creationDate = creationDate;
+        this.creationUser = creationUser;
+        this.modificationDate = modificationDate;
+        this.modificationUser = modificationUser;
+        this.idCustomer = idCustomer;
+    }
+
+    public Customer getidCustomer() {
+        return idCustomer;
+    }
+
+    public void setidCustomer(Customer idCustomer) {
+        this.idCustomer = idCustomer;
+    }
 
     public int getId() {
         return idProduct;
@@ -73,11 +105,11 @@ public class Product {
         this.accountType = accountType;
     }
 
-    public int getAccountNumber() {
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
@@ -105,11 +137,11 @@ public class Product {
         this.availableBalance = availableBalance;
     }
 
-    public boolean isGMF() {
+    public String getGMF() {
         return GMF;
     }
 
-    public void setGMF(boolean GMF) {
+    public void setGMF(String GMF) {
         this.GMF = GMF;
     }
 
