@@ -8,7 +8,8 @@ import com.Brahian.BdBank.entity.Product;
 public interface ProductService {
     public boolean createProduct(Integer idCustomer, Product accounDetail);
     public boolean updateProductById(int idProduct, Product productDetail);
-    public List<Product> getAllProduct();
+    public List<Product> getAllProducts();
+    public List<Product> getAllProductById(int id);
     public Optional<Product> getProductById(int idProduct);
     public boolean deleteProductById(int idProduct);
 }

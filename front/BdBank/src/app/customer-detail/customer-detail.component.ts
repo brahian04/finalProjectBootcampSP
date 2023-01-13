@@ -13,9 +13,11 @@ import { Product } from '../model/product';
 })
 export class CustomerDetailComponent implements OnInit {
 
-  id:number
+  id:number;
+  idProduct:number;
   customer:Customer;
   product: Product= new Product();
+  products:Product[];
   button:boolean=false;
   constructor(private route:ActivatedRoute,private customerService:CustomerServiceService,private productService:ProductService,private router:Router){}
 
@@ -32,14 +34,24 @@ export class CustomerDetailComponent implements OnInit {
   registProduct(){
     this.productService.registerProduct(this.id,this.product).subscribe(res => {
       console.log(res);
-      // this.goCustomerDetail(this.id);
     },error => console.log(error));
+  }
+
+  private productList(id:number){
+    this.productService.getProductByIdCustomer(id).subscribe(res=> {
+      this.products= res;
+    });
+  }
+
+  productDetail(idProduct:number){
+    this.router.navigate(['product-detail',this.idProduct]);
   }
 
   onSubmit(){
     this.registProduct();
     this.buttonReg();
     swal('Created customer',`The customer ${this.product.accountType} has been successfully created`,`success`);
+    window.location.reload();
   }
 
   deleteCustomer(id:number){
@@ -75,9 +87,6 @@ export class CustomerDetailComponent implements OnInit {
   sendCustomerList(){
     this.router.navigate(['/customers']);
   }
-  // goCustomerDetail(id:number){
-  //   this.router.navigate(['customer-detail',id]);
-  // }
 
 
   ngOnInit(): void {
@@ -86,5 +95,6 @@ export class CustomerDetailComponent implements OnInit {
       this.customerService.getCustomerById(this.id).subscribe(res =>{
         this.customer= res;
       });
+      this.productList(this.id);
   }
 }

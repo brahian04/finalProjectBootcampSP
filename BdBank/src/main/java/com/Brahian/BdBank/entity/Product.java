@@ -3,6 +3,7 @@ package com.Brahian.BdBank.entity;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -55,7 +56,7 @@ public class Product {
     @Column(name= "modificationUser")
     private String modificationUser;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name= "id", nullable = false)
     private Customer idCustomer;
 

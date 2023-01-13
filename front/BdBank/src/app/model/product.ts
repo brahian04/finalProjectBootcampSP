@@ -5,7 +5,7 @@ export class Product {
     availableBalance:number;
     accountType:string;
     status:string;
-    GMF:String;
+    gmf:String;
     creationDate:Date;
     creationUser:string;
     modificationDate:Date;

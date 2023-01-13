@@ -22,6 +22,10 @@ export class ProductService {
     return this.httpClient.get<Product>(`${this.url}/${id}`);
   }
 
+  getProductByIdCustomer(id:number):Observable<Product[]>{
+    return this.httpClient.get<Product[]>(`${this.url}/${id}`);
+  }
+
   // método para registrar cuenta
   registerProduct(id:number,product:Product): Observable<Object>{
     return this.httpClient.post(`${this.url}/${id}`,product);

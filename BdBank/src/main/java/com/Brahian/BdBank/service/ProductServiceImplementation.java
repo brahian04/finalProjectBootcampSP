@@ -30,7 +30,7 @@ public class ProductServiceImplementation implements ProductService {
         int[] accountNum= new int[10];
 
         if(customerRepository.findById(idCustomer).isPresent()){
-            if(accounDetail.getAccountType()=="savings account"){
+            if(accounDetail.getAccountType().equalsIgnoreCase("savings account")){
                 accountNum[0]= 4;
                 accountNum[1]= 6;
                 for(int i=2; i<10; i++){
@@ -87,8 +87,14 @@ public class ProductServiceImplementation implements ProductService {
     }
 
     @Override
-    public List<Product> getAllProduct() {
+    public List<Product> getAllProducts() {
         return productRepository.findAll();
+    }
+
+    @Override
+    public List<Product> getAllProductById(int id){
+        
+        return productRepository.idCustomer(customerRepository.id(id));
     }
 
     @Override
