@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row aling-items-center">
-        <div class="col" style="background-color:rgba(158, 185, 178, 0.685); margin-top: 50px;width:max-content; border:1px solid">
+        <div class="col" style="max-width: 30%;background-color:rgba(158, 185, 178, 0.685); margin-top: 50px; border:1px solid; padding-right: 0.4">
             <h2>Customer details</h2>
             <div>
                 <label><b>ID: </b> {{customer.id}}</label>
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="col">
+        <div class="col" style="max-width: 100%;">
             <div  style="margin-top: 50px">
                 <h2 class="text-center" style="background-color:rgba(158, 185, 178, 0.685)">Product List</h2>
                 <table class="table table-striped" style="text-align:center">
@@ -54,10 +54,10 @@
                             <th>Balance</th>
                             <th>Available Balance</th>
                             <th>GMF</th>
-                            <th>Creation date</th>
+                            <!-- <th>Creation date</th>
                             <th>Creation user</th>
                             <th>Modification date</th>
-                            <th>Modification user</th>
+                            <th>Modification user</th> -->
                             <th>Options</th>
                         </tr>
                     </thead>
@@ -69,10 +69,10 @@
                             <td>{{product.balance}}</td>
                             <td>{{product.availableBalance}}</td>
                             <td>{{product.gmf}}</td>
-                            <td>{{product.creationDate}}</td>
+                            <!-- <td>{{product.creationDate}}</td>
                             <td>{{product.creationUser}}</td>
                             <td>{{product.modificationDate}}</td>
-                            <td>{{product.modificationUser}}</td>
+                            <td>{{product.modificationUser}}</td> -->
                             <td>
                               <button class="ngbDropdownItem" (click)= "productDetail(product.id)" class="btn btn-primary btn-sm btn-block">Details</button>
                             </td>
@@ -87,7 +87,7 @@
             </div>
             <div *ngIf="button==true" style="background-color:rgba(158, 185, 178, 0.685); margin-top: 10px; width: 311px; border:1px solid">
                 <h3>Create-product</h3>
-                <div class="containner">
+                <div class="container">
                     <form (ngSubmit)= "onSubmit()" #customerForm="ngForm">
                         <div class="form_group">
                             <label>Product Type: </label>

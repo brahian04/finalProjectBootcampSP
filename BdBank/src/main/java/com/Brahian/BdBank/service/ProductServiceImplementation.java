@@ -75,12 +75,9 @@ public class ProductServiceImplementation implements ProductService {
     public boolean updateProductById(int idProduct, Product productDetail) {
         return getProductById(idProduct).map(product ->{
             Product prod = product;
-            // Date date = new Date(System.currentTimeMillis());
             prod.setStatus(productDetail.getStatus());
             prod.setBalance(productDetail.getBalance());
             prod.setAvailableBalance(productDetail.getAvailableBalance());
-
-            // customer.setModificationDate(date);
             productRepository.save(prod);
             return true;
         }).orElse(false);
