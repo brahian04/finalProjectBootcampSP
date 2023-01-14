@@ -1,5 +1,5 @@
 <div class="continer">
-    <div class="col-sm-2 offset-md-5" style="margin-top: 40px; border:1px solid">
+    <div class="col-sm-2 offset-md-5" style="margin-top: 30px;background-color:rgba(158, 185, 178, 0.685)">
         <h3 class="text-center">Register clients</h3>
         <form (ngSubmit)= "onSubmit()" #customerForm="ngForm">
             <div class="form-group">
@@ -125,7 +125,7 @@
                 </div>
             </div>
     
-            <button class="btn btn-success" [disabled]= "!customerForm.form.valid">Save</button>
+            <button class="btn btn-success" [disabled]= "!customerForm.form.valid" style="margin-bottom: 10px">Save</button>
         </form>
     </div>
 </div>

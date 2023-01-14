@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row aling-items-center">
-        <div class="col" style="margin-top: 50px;width:max-content; border:1px solid">
-            <h3>Customer details</h3>
+        <div class="col" style="background-color:rgba(158, 185, 178, 0.685); margin-top: 50px;width:max-content; border:1px solid">
+            <h2>Customer details</h2>
             <div>
                 <label><b>ID: </b> {{customer.id}}</label>
             </div>
@@ -35,17 +35,17 @@
             <div>
                 <label><b>Modification user: </b> {{customer.modificationUser}}</label>
             </div>
-            <div style="margin-bottom:1%">
-                <a class="btn btn-primary btn-sm" (click)= "sendCustomerList()" role="button" style="margin-right: 100px" style="width: 100px">Return list</a>
-                <button type="button" (click)= "updateCustomer(customer.id)" class="btn btn-info btn-sm" style="margin-left: 20px; width: 100" >Edit</button>
-                <button type="button" (click)= "deleteCustomer(customer.id)" class="btn btn-danger btn-sm" style="margin-left: 20px;width: 100">Delete</button>
+            <div class="d-grid gap-2 d-md-block" style="margin-bottom: 8px">
+                <a class="btn btn-primary btn-sm" (click)= "sendCustomerList()" role="button">Return list</a>
+                <button type="button" (click)= "updateCustomer(customer.id)" class="btn btn-info btn-sm" style="margin-left: 10px">Edit</button>
+                <button type="button" (click)= "deleteCustomer(customer.id)" class="btn btn-danger btn-sm" style="margin-left: 10px">Delete</button>
             </div>
         </div>
 
         <div class="col">
             <div  style="margin-top: 50px">
                 <h2 class="text-center" style="background-color:rgba(158, 185, 178, 0.685)">Product List</h2>
-                <table class="table table-striped">
+                <table class="table table-striped" style="text-align:center">
                     <thead class="table-success" style="background-color: green">
                         <tr>
                             <th >Account type</th>
@@ -81,31 +81,30 @@
                 </table>
             </div>
         </div>
-    </div>
-
-    <div>
-        <div *ngIf="button==false">
-            <button type="button" (click)= "buttonReg()" class="btn btn-success btn-sm" style="margin-top: 10px;">Create product</button>
-        </div>
-        <div *ngIf="button==true">
-            <h3>Create-product</h3>
-            <div class="containner">
-                <form (ngSubmit)= "onSubmit()" #customerForm="ngForm">
-                    <div class="form_group">
-                        <label>Product Type: </label>
-                        <select id="accountType"
-                        [(ngModel)]= "product.accountType"
-                        name="accountType"
-                        required
-                        #documentType = "ngModel"
-                        style="margin-left: 10px; margin-top: 20px">
-                            <option value="savings account" selected>savings account</option>
-                            <option value="current account">current account</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-success" [disabled]= "!customerForm.form.valid">Save</button>
-                    <button type="button" (click)= "buttonReg()" class="btn btn-danger" style="margin-left:10px">Cancel</button>
-                </form>
+        <div class="row" style="width: 100%;">
+            <div *ngIf="button==false">
+                <button type="button" (click)= "buttonReg()" class="btn btn-success btn-sm" style="margin-top: 10px;">Create product</button>
+            </div>
+            <div *ngIf="button==true" style="background-color:rgba(158, 185, 178, 0.685); margin-top: 10px; width: 311px; border:1px solid">
+                <h3>Create-product</h3>
+                <div class="containner">
+                    <form (ngSubmit)= "onSubmit()" #customerForm="ngForm">
+                        <div class="form_group">
+                            <label>Product Type: </label>
+                            <select id="accountType"
+                            [(ngModel)]= "product.accountType"
+                            name="accountType"
+                            required
+                            #documentType = "ngModel"
+                            style="margin-left: 10px; margin-top: 20px">
+                                <option value="savings account" selected>savings account</option>
+                                <option value="current account">current account</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-success" [disabled]= "!customerForm.form.valid">Save</button>
+                        <button type="button" (click)= "buttonReg()" class="btn btn-danger" style="margin-left:10px">Cancel</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

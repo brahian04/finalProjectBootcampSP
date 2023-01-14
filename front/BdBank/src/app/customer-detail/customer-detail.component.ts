@@ -14,7 +14,6 @@ import { Product } from '../model/product';
 export class CustomerDetailComponent implements OnInit {
 
   id:number;
-  idProduct:number;
   customer:Customer;
   product: Product= new Product();
   products:Product[];
@@ -44,7 +43,7 @@ export class CustomerDetailComponent implements OnInit {
   }
 
   productDetail(idProduct:number){
-    this.router.navigate(['product-detail',this.idProduct]);
+    this.router.navigate(['detail-product',idProduct]);
   }
 
   onSubmit(){

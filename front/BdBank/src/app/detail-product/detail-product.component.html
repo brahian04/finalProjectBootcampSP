@@ -1,1 +1,43 @@
-<p>detail-product works!</p>
+<div class="continer">
+    <div class="row aling-items-center">
+        <div class="col">
+            <div  style="margin-top: 50px">
+                <h2 class="text-center" style="background-color:rgba(158, 185, 178, 0.685)">Product List</h2>
+                <table class="table table-striped" style="text-align:center">
+                    <thead class="table-success" style="background-color: green">
+                        <tr>
+                            <th >Account type</th>
+                            <th>Account number</th>
+                            <th>Status</th>
+                            <th>Balance</th>
+                            <th>Available Balance</th>
+                            <th>GMF</th>
+                            <th>Creation date</th>
+                            <th>Creation user</th>
+                            <th>Modification date</th>
+                            <th>Modification user</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{product.accountType}}</td>
+                            <td>{{product.accountNumber}}</td>
+                            <td>{{product.status}}</td>
+                            <td>{{product.balance}}</td>
+                            <td>{{product.availableBalance}}</td>
+                            <td>{{product.gmf}}</td>
+                            <td>{{product.creationDate}}</td>
+                            <td>{{product.creationUser}}</td>
+                            <td>{{product.modificationDate}}</td>
+                            <td>{{product.modificationUser}}</td>
+                            <td>
+                              
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

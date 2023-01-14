@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { NgbdDropdownContainer } from './dropdown-container/dropdown-container.component';
-import { CreateProductComponent } from './create-product/create-product.component';
+import { DetailProductComponent } from './detail-product/detail-product.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { CreateProductComponent } from './create-product/create-product.componen
     RegisterCustomerComponent,
     UpdateCustomerComponent,
     CustomerDetailComponent,
-    CreateProductComponent
+    DetailProductComponent
   ],
   imports: [
     BrowserModule,

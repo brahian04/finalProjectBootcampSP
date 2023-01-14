@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Brahian.BdBank.entity.Product;
 import com.Brahian.BdBank.service.ProductService;
 
 @RestController
-@RequestMapping("/products")
 @CrossOrigin(origins="http://localhost:4200")
 
 public class ProductController {
@@ -27,7 +26,7 @@ public class ProductController {
     ProductService productService;
 
     
-    @PostMapping("/{id}")
+    @PostMapping("/products/{id}")
     public ResponseEntity<Product>
     createProduct(
         @RequestBody Product productDetail,
@@ -41,19 +40,19 @@ public class ProductController {
         }
     }
 
-    @GetMapping
-    public ResponseEntity<List<Product>> getProducts(){
-        return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
-    }
-
-    // @GetMapping("/{id}")
-    // public ResponseEntity<Product> getProductById(@PathVariable("id") int idProduct){
-    //     return productService.getProductById(idProduct)
-    //             .map(product -> new ResponseEntity<>(product, HttpStatus.OK))
-    //             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    // @GetMapping
+    // public ResponseEntity<List<Product>> getProducts(){
+    //     return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     // }
 
-    @GetMapping("/{id}")
+    @GetMapping("/product/{idProduct}")
+    public ResponseEntity<Product> getProductById(@PathVariable("idProduct") int idProduct){
+        return productService.getProductById(idProduct)
+                .map(product -> new ResponseEntity<>(product, HttpStatus.OK))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @GetMapping("/products/{id}")
     public ResponseEntity<List<Product>> getAllProductById(@PathVariable("id") int id){
         return new ResponseEntity<>(productService.getAllProductById(id),HttpStatus.OK);
     }

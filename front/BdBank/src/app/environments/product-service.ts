@@ -18,8 +18,8 @@ export class ProductService {
     return this.httpClient.get<Product[]>(`${this.url}`);
   }
 
-  getProductById(id:number):Observable<Product>{
-    return this.httpClient.get<Product>(`${this.url}/${id}`);
+  getProductById(idProduct:number):Observable<Product>{
+    return this.httpClient.get<Product>(`${"http://localhost:8080/v1/api/product"}/${idProduct}`);
   }
 
   getProductByIdCustomer(id:number):Observable<Product[]>{
